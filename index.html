@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ASCEND — The Pipe Climber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+
+    <div id="vignette"></div>
+    <div id="hurt-flash"></div>
+    <div id="flash"></div>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <div class="hud-height"><span id="hud-height">0</span><small>m</small></div>
+        <div class="hud-row">SCORE <b id="hud-score">0</b></div>
+        <div class="hud-row"><i class="gem-icon"></i><b id="hud-gems">0</b></div>
+      </div>
+      <div class="hud-center"><div id="hud-zone">ANCIENT RUINS</div></div>
+      <div class="hud-right">
+        <div id="hud-hearts"></div>
+        <div class="hud-buttons">
+          <button id="btn-mute" class="icon-btn" title="Mute (M)">♪</button>
+          <button id="btn-pause" class="icon-btn" title="Pause (Esc)">❚❚</button>
+        </div>
+      </div>
+      <div id="progress">
+        <div id="progress-lap"></div>
+        <div id="progress-zones"></div>
+        <div id="progress-tide"></div>
+        <div id="progress-player"></div>
+      </div>
+      <div id="wind-indicator"></div>
+    </div>
+
+    <div id="banner">
+      <div class="banner-zone">ZONE 1</div>
+      <div class="banner-name">ANCIENT RUINS</div>
+      <div class="banner-sub"></div>
+    </div>
+    <div id="toast"></div>
+
+    <!-- Main menu -->
+    <div id="menu" class="screen">
+      <div class="panel menu-panel">
+        <div class="title-wrap">
+          <h1 class="title">ASCEND</h1>
+          <div class="tagline">THE PIPE CLIMBER</div>
+        </div>
+        <p class="lore">
+          The tower is flooding from below. Leap across broken pipes, scale rusted ladders,
+          and outrun the rising tide through five deadly worlds.
+        </p>
+        <div id="menu-zones" class="zones"></div>
+        <button id="btn-play" class="btn primary">▶ START CLIMB</button>
+        <div id="menu-best" class="best"></div>
+        <div class="controls">
+          <div><kbd>A</kbd><kbd>D</kbd> / <kbd>←</kbd><kbd>→</kbd> Move</div>
+          <div><kbd>Space</kbd> Jump · press again to <b>double jump</b></div>
+          <div><kbd>W</kbd> / <kbd>↑</kbd> Climb ladders (or jump)</div>
+          <div><kbd>S</kbd> / <kbd>↓</kbd> Drop through a pipe</div>
+          <div><kbd>Esc</kbd> Pause · <kbd>M</kbd> Mute</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pause -->
+    <div id="pause" class="screen hidden">
+      <div class="panel small">
+        <h2>PAUSED</h2>
+        <button id="btn-resume" class="btn primary">▶ RESUME</button>
+        <button id="btn-restart" class="btn">↻ RESTART</button>
+        <button id="btn-menu" class="btn ghost">MAIN MENU</button>
+      </div>
+    </div>
+
+    <!-- Game over -->
+    <div id="gameover" class="screen hidden">
+      <div class="panel small">
+        <h2 class="danger">YOU FELL</h2>
+        <div id="go-cause" class="cause"></div>
+        <div id="go-newbest" class="newbest hidden">★ NEW BEST CLIMB ★</div>
+        <div class="stats">
+          <div><span>HEIGHT</span><b id="go-height">0 m</b></div>
+          <div><span>SCORE</span><b id="go-score">0</b></div>
+          <div><span>GEMS</span><b id="go-gems">0</b></div>
+          <div><span>REACHED</span><b id="go-zone">-</b></div>
+          <div><span>BEST</span><b id="go-best">0 m</b></div>
+        </div>
+        <button id="btn-retry" class="btn primary">↻ CLIMB AGAIN</button>
+        <button id="btn-menu2" class="btn ghost">MAIN MENU</button>
+      </div>
+    </div>
+
+    <!-- Touch controls -->
+    <div id="touch" class="hidden">
+      <div class="t-pad">
+        <button id="t-left" class="t-btn">◀</button>
+        <button id="t-right" class="t-btn">▶</button>
+      </div>
+      <div class="t-pad">
+        <button id="t-down" class="t-btn small">▼</button>
+        <button id="t-up" class="t-btn small">▲</button>
+        <button id="t-jump" class="t-btn jump">JUMP</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
