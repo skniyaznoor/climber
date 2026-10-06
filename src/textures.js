@@ -138,8 +138,8 @@ export function makeWallTextures(style) {
   if (style.extra === 'frost') {
     for (const [x, y, w, h] of bricks) {
       const grd = g.createLinearGradient(0, y, 0, y + h);
-      grd.addColorStop(0, 'rgba(240,250,255,0.85)');
-      grd.addColorStop(0.35, 'rgba(220,240,255,0.15)');
+      grd.addColorStop(0, 'rgba(230,245,255,0.55)');
+      grd.addColorStop(0.3, 'rgba(220,240,255,0.08)');
       grd.addColorStop(1, 'rgba(255,255,255,0)');
       g.fillStyle = grd;
       g.fillRect(x, y, w, h);

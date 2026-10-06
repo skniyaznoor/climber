@@ -57,7 +57,7 @@ class Materials {
     this.dark = new THREE.MeshStandardMaterial({ color: 0x1c1c22, metalness: 0.8, roughness: 0.4 });
     this.hole = new THREE.MeshBasicMaterial({ color: 0x050505 });
     this.icy = new THREE.MeshStandardMaterial({
-      color: 0xc8f0ff, metalness: 0.1, roughness: 0.06, emissive: 0x2a6a9a, emissiveIntensity: 0.7,
+      color: 0x6ab8e0, metalness: 0.2, roughness: 0.3, emissive: 0x1a5a8a, emissiveIntensity: 0.45,
     });
     this.icicle = new THREE.MeshStandardMaterial({
       color: 0xdff6ff, metalness: 0.1, roughness: 0.05, emissive: 0x4ab0ff, emissiveIntensity: 1.2,
