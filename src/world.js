@@ -78,7 +78,7 @@ export class World {
     map.repeat.set(2.5, ZH / 8);
     if (emissiveMap) emissiveMap.repeat.set(2.5, ZH / 8);
     const wall = new THREE.MeshStandardMaterial({
-      map, emissiveMap, emissive: emissiveMap ? 0xffffff : 0x000000, emissiveIntensity: zone.wall.glow ?? 1.6,
+      map, emissiveMap, emissive: emissiveMap ? 0xffffff : 0x000000, emissiveIntensity: zone.wall.glow ?? 1.0,
       roughness: 0.92, metalness: 0.0,
     });
     const pmap = map.clone();
@@ -89,7 +89,7 @@ export class World {
     });
     const beam = new THREE.MeshStandardMaterial({ color: zone.pipe, map: this.metal, metalness: 0.8, roughness: 0.35 });
     const glow = new THREE.MeshStandardMaterial({
-      color: zone.accent, emissive: zone.accent, emissiveIntensity: 3.5, roughness: 0.4,
+      color: zone.accent, emissive: zone.accent, emissiveIntensity: 1.8, roughness: 0.4,
     });
     const deco = new THREE.MeshStandardMaterial({
       color: new THREE.Color(zone.pipe).multiplyScalar(0.45), map: this.metal, metalness: 0.7, roughness: 0.5,

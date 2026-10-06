@@ -79,7 +79,7 @@ export const ZONES = [
     lamp: 0xd8f4ff,
     tide: { color: 0xcdeeff, deep: 0x3a6a9a, foam: 0xffffff, glow: 0.25, lava: 0, ice: 1, plasma: 0 },
     particles: 'snow',
-    wall: { brick: '#3f5a72', mortar: '#152230', variance: 0.12, extra: 'frost', seed: 51, emissive: true, glow: 0.8 },
+    wall: { brick: '#3f5a72', mortar: '#152230', variance: 0.12, extra: 'frost', seed: 51, emissive: true, glow: 0.5 },
     backdrop: 'peak',
     features: { ladder: 0.10, split: 0.16, broken: 0.18, moving: 0.15, side: 0.22, icy: 0.5, icicle: 0.3, wind: true },
     music: {
@@ -100,7 +100,7 @@ export const ZONES = [
     lamp: 0xd0c0ff,
     tide: { color: 0x8a3aff, deep: 0x12043a, foam: 0xe0b0ff, glow: 0.8, lava: 0, ice: 0, plasma: 1 },
     particles: 'rain',
-    wall: { brick: '#3a3550', mortar: '#121020', variance: 0.15, extra: 'circuit', seed: 67, emissive: true },
+    wall: { brick: '#3a3550', mortar: '#121020', variance: 0.15, extra: 'circuit', seed: 67, emissive: true, glow: 0.7 },
     backdrop: 'rock',
     features: { ladder: 0.08, split: 0.2, broken: 0.22, moving: 0.25, side: 0.2, electric: 0.25, wind: true, lightning: true },
     music: {

@@ -42,7 +42,7 @@ export class Player {
     const black = M(0x111111, { roughness: 0.3 });
     const scarf = M(0xc8102e);
     const rope = M(0xe8c070);
-    const lamp = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff2c0, emissiveIntensity: 6 });
+    const lamp = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff2c0, emissiveIntensity: 3 });
 
     this.squashG = new THREE.Group();
     this.root.add(this.squashG);

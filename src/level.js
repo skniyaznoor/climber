@@ -60,11 +60,11 @@ class Materials {
       color: 0x6ab8e0, metalness: 0.2, roughness: 0.3, emissive: 0x1a5a8a, emissiveIntensity: 0.45,
     });
     this.icicle = new THREE.MeshStandardMaterial({
-      color: 0xdff6ff, metalness: 0.1, roughness: 0.05, emissive: 0x4ab0ff, emissiveIntensity: 1.2,
+      color: 0xdff6ff, metalness: 0.1, roughness: 0.05, emissive: 0x4ab0ff, emissiveIntensity: 0.7,
       transparent: true, opacity: 0.9,
     });
-    this.heart = new THREE.MeshStandardMaterial({ color: 0xff2a4a, emissive: 0xff1a3a, emissiveIntensity: 2.2, roughness: 0.3 });
-    this.fireball = new THREE.MeshStandardMaterial({ color: 0xffa040, emissive: 0xff5a10, emissiveIntensity: 4, flatShading: true });
+    this.heart = new THREE.MeshStandardMaterial({ color: 0xff2a4a, emissive: 0xff1a3a, emissiveIntensity: 1.4, roughness: 0.3 });
+    this.fireball = new THREE.MeshStandardMaterial({ color: 0xffa040, emissive: 0xff5a10, emissiveIntensity: 2.5, flatShading: true });
     this.bolt = new THREE.MeshBasicMaterial({ color: new THREE.Color(3, 3, 7) });
   }
 
@@ -80,19 +80,19 @@ class Materials {
     return this.get('rust' + z.key, () => new THREE.MeshStandardMaterial({ color: z.rust, map: this.rustTex, metalness: 0.45, roughness: 0.75 }));
   }
   accent(z) {
-    return this.get('acc' + z.key, () => new THREE.MeshStandardMaterial({ color: z.accent, emissive: z.accent, emissiveIntensity: 2.5, roughness: 0.4 }));
+    return this.get('acc' + z.key, () => new THREE.MeshStandardMaterial({ color: z.accent, emissive: z.accent, emissiveIntensity: 1.2, roughness: 0.4 }));
   }
   warning(z) {
-    return this.get('warn' + z.key, () => new THREE.MeshStandardMaterial({ color: 0xff3a1a, emissive: 0xff2a00, emissiveIntensity: 2.5, roughness: 0.4 }));
+    return this.get('warn' + z.key, () => new THREE.MeshStandardMaterial({ color: 0xff3a1a, emissive: 0xff2a00, emissiveIntensity: 1.3, roughness: 0.4 }));
   }
   gem(z) {
     return this.get('gem' + z.key, () => new THREE.MeshStandardMaterial({
-      color: z.gem, emissive: z.gem, emissiveIntensity: 2.2, metalness: 0.3, roughness: 0.15, flatShading: true,
+      color: z.gem, emissive: z.gem, emissiveIntensity: 1.4, metalness: 0.3, roughness: 0.15, flatShading: true,
     }));
   }
   ladder(z) {
     return this.get('lad' + z.key, () => new THREE.MeshStandardMaterial({
-      color: 0xd0d0d0, map: this.metal, metalness: 0.85, roughness: 0.3, emissive: z.accent, emissiveIntensity: 0.35,
+      color: 0xd0d0d0, map: this.metal, metalness: 0.85, roughness: 0.3, emissive: z.accent, emissiveIntensity: 0.2,
     }));
   }
 }
@@ -254,7 +254,7 @@ export class Level {
     ring.position.set(ox, p.r + 0.19, 0);
     p.mesh.add(ring);
     const colMat = new THREE.MeshBasicMaterial({
-      color: type === 'flame' ? new THREE.Color(2.5, 0.9, 0.2) : new THREE.Color(0.6, 1.6, 2.2),
+      color: type === 'flame' ? new THREE.Color(1.6, 0.6, 0.15) : new THREE.Color(0.45, 1.1, 1.5),
       transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide,
     });
     colMat.userData.own = true;

@@ -146,7 +146,7 @@ const TIDE_FRAG = /* glsl */ `
     float bolt = abs(sin(x * 2.0 + n * 9.0 + uTime * 3.0));
     col += uFoam * smoothstep(0.97, 1.0, bolt) * uPlasma * 2.0 * smoothstep(8.0, 0.0, depth);
     float foam = smoothstep(0.35, 0.0, depth) + smoothstep(1.0, 0.0, depth) * 0.4 * noise(vec2(x * 3.0 + uTime * 2.0, uTime));
-    col = mix(col, uFoam * (1.0 + uGlow * 1.5), clamp(foam, 0.0, 1.0));
+    col = mix(col, uFoam * (1.0 + uGlow * 0.6), clamp(foam, 0.0, 1.0));
     col += uColor * uGlow * 0.8 * smoothstep(5.0, 0.0, depth);
     float alpha = mix(0.72, 0.95, smoothstep(0.0, 4.0, depth));
     gl_FragColor = vec4(col, alpha);
@@ -200,7 +200,7 @@ export class Tide {
     this.uniforms.uTop.value = this.y;
     this.mesh.position.set(camX, this.y - 45 + 1.0, 2.6);
     this.light.position.set(camX, this.y + 1.5, 3);
-    this.light.intensity = 25 + this.uniforms.uGlow.value * 70;
+    this.light.intensity = 15 + this.uniforms.uGlow.value * 40;
   }
 }
 

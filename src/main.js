@@ -37,7 +37,7 @@ class Game {
 
     this.composer = new EffectComposer(this.renderer);
     this.composer.addPass(new RenderPass(this.scene, this.camera));
-    this.bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.75, 0.5, 0.85);
+    this.bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.4, 0.35, 0.92);
     this.composer.addPass(this.bloom);
     this.composer.addPass(new OutputPass());
 
@@ -121,7 +121,7 @@ class Game {
     const g = new THREE.Group();
     const line = new THREE.Mesh(
       new THREE.PlaneGeometry(17.4, 0.07),
-      new THREE.MeshBasicMaterial({ color: new THREE.Color(2.4, 1.7, 0.4), transparent: true, opacity: 0.8 }),
+      new THREE.MeshBasicMaterial({ color: new THREE.Color(1.4, 1.0, 0.25), transparent: true, opacity: 0.7 }),
     );
     g.add(line);
     this.bestLabel = new THREE.Sprite(new THREE.SpriteMaterial({ map: makeLabelTexture('BEST'), transparent: true, depthWrite: false }));
