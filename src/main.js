@@ -12,6 +12,7 @@ import { World } from './world.js';
 import { Level } from './level.js';
 import { Player } from './player.js';
 import { UI } from './ui.js';
+import { ICON_HEART } from './icons.js';
 import { makeLabelTexture } from './textures.js';
 import './style.css';
 
@@ -209,7 +210,7 @@ class Game {
     this.audio.heart();
     if (this.player.hearts < this.player.maxHearts) {
       this.player.hearts++;
-      this.ui.toast('+1 ♥', '#ff5a7a');
+      this.ui.toast(`+1 ${ICON_HEART}`, '#ff5a7a');
     } else {
       this.bonus += 500;
       this.ui.toast('+500', '#ff5a7a');
@@ -341,7 +342,7 @@ class Game {
       this.bonus += 500;
       if (p.hearts < p.maxHearts) {
         p.hearts++;
-        this.ui.toast('ZONE CLEAR  +1 ♥  +500', '#7affc8');
+        this.ui.toast(`ZONE CLEAR  +1 ${ICON_HEART}  +500`, '#7affc8');
       } else this.ui.toast('ZONE CLEAR  +500', '#7affc8');
       this.fx.burst(p.x, p.cy, 0.5, 60, { color: z.zone.accent, color2: 0xffffff, speed: 9, life: 0.9, size: 0.16 });
     }

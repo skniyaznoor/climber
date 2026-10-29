@@ -1,3 +1,11 @@
+import {
+  ICON_TEMPLE,
+  ICON_WAVE,
+  ICON_FIRE,
+  ICON_SNOW,
+  ICON_LIGHTNING,
+} from './icons.js';
+
 // Each zone is a themed band of the tower. After the last zone the tower loops
 // back to the first theme with a higher "lap", which raises difficulty.
 export const ZONE_HEIGHT = 70;
@@ -7,7 +15,7 @@ export const ZONES = [
     key: 'stone',
     name: 'ANCIENT RUINS',
     subtitle: 'Every legend starts at the bottom',
-    icon: '🏛',
+    icon: ICON_TEMPLE,
     skyTop: 0x1d2b4a, skyBottom: 0xc99a6b, stars: 0.0,
     fog: 0x6b5f5a, fogDensity: 0.016,
     hemiSky: 0xbfd4ff, hemiGround: 0x4a3a2a, hemiIntensity: 1.0,
@@ -28,7 +36,7 @@ export const ZONES = [
     key: 'water',
     name: 'FLOODED DEPTHS',
     subtitle: 'Ride the geysers. Don\'t drown.',
-    icon: '🌊',
+    icon: ICON_WAVE,
     skyTop: 0x020c1a, skyBottom: 0x0f5a7a, stars: 0.35,
     fog: 0x0d3a50, fogDensity: 0.02,
     hemiSky: 0x7ad4ff, hemiGround: 0x02202a, hemiIntensity: 1.1,
@@ -49,7 +57,7 @@ export const ZONES = [
     key: 'fire',
     name: 'INFERNO CORE',
     subtitle: 'Mind the vents. The pipes run hot.',
-    icon: '🔥',
+    icon: ICON_FIRE,
     skyTop: 0x120202, skyBottom: 0x8a2a08, stars: 0.0,
     fog: 0x4a1408, fogDensity: 0.02,
     hemiSky: 0xff9a60, hemiGround: 0x300800, hemiIntensity: 1.0,
@@ -70,7 +78,7 @@ export const ZONES = [
     key: 'ice',
     name: 'FROZEN SPIRE',
     subtitle: 'Slippery footing. Howling winds.',
-    icon: '❄',
+    icon: ICON_SNOW,
     skyTop: 0x0a1a3a, skyBottom: 0x6aa8d8, stars: 0.2,
     fog: 0x5a7c9c, fogDensity: 0.018,
     hemiSky: 0xc8e8ff, hemiGround: 0x2a4a6a, hemiIntensity: 0.6,
@@ -91,7 +99,7 @@ export const ZONES = [
     key: 'storm',
     name: 'STORM SUMMIT',
     subtitle: 'Lightning seeks the highest point.',
-    icon: '⚡',
+    icon: ICON_LIGHTNING,
     skyTop: 0x05030f, skyBottom: 0x3a2a6a, stars: 1.0,
     fog: 0x1a1430, fogDensity: 0.022,
     hemiSky: 0x9a8aff, hemiGround: 0x100820, hemiIntensity: 1.0,

@@ -1,7 +1,8 @@
 import { ZONES, ZONE_HEIGHT } from './zones.js';
+import { ICON_HEART } from './icons.js';
 
 const $ = (id) => document.getElementById(id);
-const HEART_SVG = '<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.3 4 6.3 4c2.4 0 3.9 1.4 5.7 3.4C13.8 5.4 15.3 4 17.7 4c4 0 5.9 4.4 4.3 7.7C19.5 16.4 12 21 12 21z"/></svg>';
+const HEART_SVG = ICON_HEART;
 
 export class UI {
   constructor() {
@@ -88,10 +89,10 @@ export class UI {
     b.classList.add('show');
   }
 
-  toast(text, color = '#ffd36a') {
+  toast(content, color = '#ffd36a') {
     const t = document.createElement('div');
     t.className = 'toast-item';
-    t.textContent = text;
+    t.innerHTML = content;
     t.style.color = color;
     this.el.toast.appendChild(t);
     setTimeout(() => t.remove(), 1600);
